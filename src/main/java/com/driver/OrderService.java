@@ -9,6 +9,8 @@ import java.util.List;
 public class OrderService {
 @Autowired
 OrderRepository orderRepository = new OrderRepository();
+    private String partnerId;
+
     public void addOrder(Order order) {
         orderRepository.addOrder(order);
     }
@@ -31,6 +33,7 @@ OrderRepository orderRepository = new OrderRepository();
         return orderRepository.getOrderCountByPartnerId(partnerId);
     }
     public List<String> getOrdersByPartnerId(String partnerId) {
+
         return orderRepository.getOrdersByPartnerId(partnerId);
     }
     public Integer getCountOfUnassignedOrders() {
